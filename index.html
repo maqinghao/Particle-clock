@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>粒子时钟</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        background: radial-gradient(#fff, #2a9d52);
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script src="./index.js"></script>
+    <script>
+      let input = [
+        ["戴尔", "苹果", "联想"],
+        ["笔记本", "平板电脑"],
+        ["黑色", "银色"],
+        ["塑料", "铝"], //这一项参数配置成科扩展
+        ["15", "16"], //这一项参数配置成科扩展
+      ];
+      let output = ["戴尔-笔记本-黑色"];
+      function io() {
+        let iiio = [];
+        const oup = input.reduce((pre, cur, index) => {
+          if (index == 3) {
+            return pre;
+          }
+          return pre.flatMap((item) => cur.map((item2) => item + "-" + item2));
+        });
+        console.log(oup);
+      }
+      io();
+    </script>
+  </body>
+</html>
